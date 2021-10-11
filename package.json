@@ -1,0 +1,57 @@
+{
+  "name": "bash-beautifier",
+  "main": "./loader.js",
+  "bundle": "./dist/main.js",
+  "version": "0.2.0",
+  "description": "A shell script beautifier.",
+  "keywords": [],
+  "license": "MIT",
+  "scripts": {
+    "tsc": "tsc -p ./lib",
+    "dev": "cross-env NODE_ENV=development parcel watch --target bundle lib/main.ts",
+    "build": "cross-env NODE_ENV=production parcel build --target bundle lib/main.ts"
+  },
+  "dependencies": {
+    "typescript": "^4.1.5"
+  },
+  "devDependencies": {
+    "@parcel/transformer-typescript-tsc": "^2.0.0-alpha.3",
+    "@types/atom": "^1.40.7",
+    "@types/node": "^14.14.30",
+    "@typescript-eslint/eslint-plugin": "^4.15.1",
+    "@typescript-eslint/parser": "^4.15.1",
+    "atom-package-deps": "^7.2.2",
+    "atom-ts-transpiler": "^1.5.3",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.20.0",
+    "eslint-config-esnext": "^4.1.0",
+    "eslint-config-node": "^4.1.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "module-alias": "^2.2.2",
+    "parcel": "^1.12.4",
+    "prettier": "^2.2.1",
+    "ts-node": "^9.1.1",
+    "tslib": "^2.1.0"
+  },
+  "_moduleAliases": {
+    "@lib": "./lib",
+    "@beautifier": "./lib/beautifier"
+  },
+  "atomTranspilers": [
+    {
+      "transpiler": "atom-ts-transpiler",
+      "glob": "{!(node_modules)/**/,}*.ts?(x)",
+      "options": {
+        "compilerOptions": {
+          "target": "es2019",
+          "module": "commonjs"
+        },
+        "cacheKeyFiles": [],
+        "verbose": false
+      }
+    }
+  ]
+}

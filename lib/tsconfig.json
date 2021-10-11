@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": true,
+    "lib": ["es7", "dom"],
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "allowJs": false,
+    "noLib": false,
+    "outDir": "../dist",
+    "preserveConstEnums": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "es2017",
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "newLine": "LF",
+    "noEmit": true,
+    "paths": {
+      "@lib/*": ["./*"],
+      "@beautifier": ["./beautifier"],
+      "@beautifier/*": ["./beautifier/*"]
+    }
+  },
+  "compileOnSave": false
+}
